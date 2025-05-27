@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Price' Cafe - Menu Lengkap 🎉</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #ff1493;
+      text-shadow: 1px 1px white;
+    }
+    .page {
+      display: none;
+      background: #fff8dc;
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+      border: 4px dashed #ff69b4;
+    }
+    .active {
+      display: block;
+    }
+    .menu-item {
+      background: #ffecf2;
+      border: 2px solid #ff69b4;
+      margin: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-item:hover {
+      background-color: #ffe4ec;
+    }
+    .nav-buttons, .action-buttons {
+      margin: 20px 0;
+    }
+    .btn {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #ff1493;
+    }
+    .receipt, .reward {
+      display: none;
+      background: #fffbe7;
+      border: 4px dashed #ff69b4;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 600px;
+    }
+    .qr img { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🎉 Price' Cafe - Menu Lengkap 🎉</h1>
+
+  <div class="page active" id="coffee">
+    <h2>☕ Coffee - 15.000</h2>
+    <div class="menu-item" onclick="selectItem('Americano', 15000)">Americano</div>
+    <div class="menu-item" onclick="selectItem('Kopi Gula Aren', 15000)">Kopi Gula Aren</div>
+    <div class="menu-item" onclick="selectItem('Mochacino', 15000)">Mochacino</div>
+    <div class="menu-item" onclick="selectItem('Cappucino', 15000)">Cappucino</div>
+    <div class="menu-item" onclick="selectItem('Caffe Latte', 15000)">Caffe Latte</div>
+    <div class="menu-item" onclick="selectItem('Spanish Latte', 15000)">Spanish Latte</div>
+    <div class="menu-item" onclick="selectItem('Vanilla Latte', 15000)">Vanilla Latte</div>
+    <div class="menu-item" onclick="selectItem('Matcha Fusion', 15000)">Matcha Fusion</div>
+    <div class="menu-item" onclick="selectItem('Caramel Machiato', 15000)">Caramel Machiato</div>
+    <div class="menu-item" onclick="selectItem('Butterscotch Latte', 15000)">Butterscotch Latte</div>
+    <div class="menu-item" onclick="selectItem('Arenscotch Latte', 15000)">Arenscotch Latte</div>
+    <div class="menu-item" onclick="selectItem('Buttercream Latte', 15000)">Buttercream Latte</div>
+  </div>
+
+  <div class="page" id="snack">
+    <h2>🍟 Snack - 10.000 ~ 25.000</h2>
+    <div class="menu-item" onclick="selectItem('Cireng Chili Oil', 10000)">Cireng Chili Oil</div>
+    <div class="menu-item" onclick="selectItem('Basreng Chili Oil', 10000)">Basreng Chili Oil</div>
+    <div class="menu-item" onclick="selectItem('Ciz Fries', 15000)">Ciz Fries</div>
+    <div class="menu-item" onclick="selectItem('Pisang Original', 12000)">Pisang Goreng Original</div>
+    <div class="menu-item" onclick="selectItem('Pisang Keju', 15000)">Pisang Goreng Keju</div>
+    <div class="menu-item" onclick="selectItem('Pisang Coklat', 15000)">Pisang Goreng Coklat</div>
+    <div class="menu-item" onclick="selectItem('Pisang Tiramisu', 15000)">Pisang Goreng Tiramisu</div>
+    <div class="menu-item" onclick="selectItem('Pisang Coklat Keju', 18000)">Pisang Coklat Keju</div>
+    <div class="menu-item" onclick="selectItem('Dimsum', 20000)">Dimsum</div>
+    <div class="menu-item" onclick="selectItem('Mix Platter', 25000)">Mix Platter</div>
+  </div>
+  <div class="page" id="noncoffee">
+    <h2>🍹 Non Coffee - 15.000 ~ 23.000</h2>
+    <div class="menu-item" onclick="selectItem('Leci Tea', 15000)">Leci Tea</div>
+    <div class="menu-item" onclick="selectItem('Strawberry Tea', 15000)">Strawberry Tea</div>
+    <div class="menu-item" onclick="selectItem('Thai Tea', 17000)">Thai Tea</div>
+    <div class="menu-item" onclick="selectItem('Cookies & Cream', 20000)">Cookies & Cream</div>
+    <div class="menu-item" onclick="selectItem('Mango Breeze', 20000)">Mango Breeze</div>
+    <div class="menu-item" onclick="selectItem('Milky Taro', 20000)">Milky Taro</div>
+    <div class="menu-item" onclick="selectItem('Milk Tea Gula Aren', 20000)">Milk Tea Gula Aren</div>
+    <div class="menu-item" onclick="selectItem('Matcha', 20000)">Matcha</div>
+    <div class="menu-item" onclick="selectItem('Chocolate Malt', 23000)">Chocolate Malt</div>
+    <div class="menu-item" onclick="selectItem('Choco Caramela', 23000)">Choco Caramela</div>
+    <div class="menu-item" onclick="selectItem('Feastable', 23000)">Feastable</div>
+  </div>
+
+  <div class="page" id="ricebowl">
+    <h2>🍚 Ricebowl - 15.000 ~ 23.000</h2>
+    <div class="menu-item" onclick="selectItem('Chick Popcorn', 15000)">Chick Popcorn</div>
+    <div class="menu-item" onclick="selectItem('Nugget & Sosis', 15000)">Nugget & Sosis</div>
+    <div class="menu-item" onclick="selectItem('Karaage', 18000)">Karaage</div>
+    <div class="menu-item" onclick="selectItem('Slice Beef', 20000)">Slice Beef</div>
+    <div class="menu-item" onclick="selectItem('Katsu', 20000)">Katsu</div>
+    <div class="menu-item" onclick="selectItem('Chicken Salted Egg', 23000)">Chicken Salted Egg</div>
+  </div>
+
+  <div class="page" id="mainfood">
+    <h2>🍽️ Main Food - 10.000 ~ 15.000</h2>
+    <div class="menu-item" onclick="selectItem('Nasi Telur Kribo', 10000)">Nasi Telur Kribo</div>
+    <div class="menu-item" onclick="selectItem('Mie Goreng Chili Oil', 12000)">Mie Goreng Chili Oil</div>
+    <div class="menu-item" onclick="selectItem('Nasi Goreng Butter', 13000)">Nasi Goreng Butter</div>
+    <div class="menu-item" onclick="selectItem('Indomie Ramen Hack', 15000)">Indomie Ramen Hack</div>
+  </div>
+
+  <div class="page" id="alacarte">
+    <h2>🍢 Ala Carte - 8.000 ~ 18.000</h2>
+    <div class="menu-item" onclick="selectItem('Telor Kribo', 8000)">Telor Kribo</div>
+    <div class="menu-item" onclick="selectItem('Indomie All Varian', 10000)">Indomie All Varian</div>
+    <div class="menu-item" onclick="selectItem('Chicken Popcorn', 15000)">Chicken Popcorn</div>
+    <div class="menu-item" onclick="selectItem('Chicken Karaage', 15000)">Chicken Karaage</div>
+    <div class="menu-item" onclick="selectItem('Chicken Katsu', 18000)">Chicken Katsu</div>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="btn" onclick="changePage(-1)">⬅️ Sebelumnya</button>
+    <button class="btn" onclick="changePage(1)">➡️ Selanjutnya</button>
+  </div>
+
+  <div class="action-buttons">
+    <button class="btn" onclick="checkout()">💸 Bayar & Lihat Struk</button>
+    <button class="btn" onclick="showRewards()">🎁 Tukarkan Poin</button>
+  </div>
+
+  <div class="receipt" id="receipt">
+    <h2>🧾 Struk Digital</h2>
+    <div id="receiptContent"></div>
+    <div class="qr">
+      <p>Scan untuk dapatkan poin!</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=PriceCafePoin" alt="QR Code">
+    </div>
+  </div>
+
+  <div class="reward" id="rewardSection">
+    <h2>🎁 Tukarkan Poin</h2>
+    <p>Total Poin Kamu: <span id="userPoints">0</span></p>
+    <ul style="list-style:none;padding:0;">
+      <li><button class="btn" onclick="redeem('Es Teh', 10)">Tukar 10 Poin - Es Teh</button></li>
+      <li><button class="btn" onclick="redeem('Leci Tea', 20)">Tukar 20 Poin - Leci Tea</button></li>
+      <li><button class="btn" onclick="redeem('Ciz Fries', 50)">Tukar 50 Poin - Ciz Fries</button></li>
+      <li><button class="btn" onclick="redeem('Cireng Chili Oil', 50)">Tukar 50 Poin - Cireng Chili Oil</button></li>
+    </ul>
+  </div>
+
+  <script>
+    let pages = ["coffee", "snack", "noncoffee", "ricebowl", "mainfood", "alacarte"];
+    let currentPage = 0;
+    let cart = [];
+    let totalPoints = 0;
+
+    function changePage(dir) {
+      document.getElementById(pages[currentPage]).classList.remove("active");
+      currentPage = (currentPage + dir + pages.length) % pages.length;
+      document.getElementById(pages[currentPage]).classList.add("active");
+    }
+
+    function selectItem(name, price) {
+      cart.push({ name, price });
+      alert(name + " ditambahkan ke pesanan.");
+    }
+
+    function checkout() {
+      if (cart.length === 0) return alert("Belum ada pesanan.");
+      let receipt = "<ul style='text-align:left'>";
+      let total = 0;
+      cart.forEach(item => {
+        receipt += `<li>${item.name} - Rp${item.price.toLocaleString()}</li>`;
+        total += item.price;
+      });
+      receipt += "</ul>";
+      receipt += `<p><strong>Total: Rp${total.toLocaleString()}</strong></p>`;
+      document.getElementById("receiptContent").innerHTML = receipt;
+      document.getElementById("receipt").style.display = "block";
+      const earned = Math.floor(total / 10000);
+      totalPoints += earned;
+      document.getElementById("userPoints").textContent = totalPoints;
+      cart = [];
+    }
+
+    function showRewards() {
+      document.getElementById("rewardSection").style.display = "block";
+    }
+
+    function redeem(item, cost) {
+      if (totalPoints >= cost) {
+        totalPoints -= cost;
+        document.getElementById("userPoints").textContent = totalPoints;
+        alert("Kamu telah menukar poin untuk: " + item);
+      } else {
+        alert("Poin kamu belum cukup!");
+      }
+    }
+  </script>
+</body>
+</html>
